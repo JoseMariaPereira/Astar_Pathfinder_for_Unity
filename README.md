@@ -1,6 +1,6 @@
 # A Star Pathfinder for Unity
 
-This is an A* Pathfinder for Unity.
+This is an A* Pathfinder for Unity./n
 Can be used to make a cellbased pathfinder or a literal distance pathfinding.
 
 
