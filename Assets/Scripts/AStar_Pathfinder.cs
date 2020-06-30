@@ -124,8 +124,12 @@ public class AStar_Pathfinder : MonoBehaviour {
 
             if(g == -1 || nodeTotalG < g)
             {
-                nextNode = node;
-                g = nextNode.distanceSoFar;
+                //if it has no distance left and it is not the end, exclude
+                if(nodeTotalG != 0 || node == aStarController.targetPosition)
+                {
+                    nextNode = node;
+                    g = nextNode.distanceSoFar;
+                }
             }
         }
         //add node to the closest path list
