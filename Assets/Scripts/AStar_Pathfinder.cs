@@ -115,7 +115,8 @@ public class AStar_Pathfinder : MonoBehaviour {
         foreach (AStar_Pathfinder_Node node in currentNode.connectedNodes)
         {
             //for literal distance
-            nodeTotalG = node.distanceSoFar + Vector3.Distance(node.transform.position, currentNode.transform.position);
+	    float distance = Vector3.Distance(node.transform.position, currentNode.transform.position);
+            nodeTotalG = node.distanceSoFar + distance;
             //for cellbased distance
             if (cellBased)
             {
@@ -125,7 +126,7 @@ public class AStar_Pathfinder : MonoBehaviour {
             if(g == -1 || nodeTotalG < g)
             {
                 //if it has no distance left and it is not the end, exclude
-                if(node.distanceSoFar != 0 || node == aStarController.targetPosition)
+                if(nodeTotalG != 0 || nodeTotalG != distance || node == aStarController.startPosition)
                 {
                     nextNode = node;
                     g = nextNode.distanceSoFar;
