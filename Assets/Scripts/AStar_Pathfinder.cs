@@ -126,10 +126,10 @@ public class AStar_Pathfinder : MonoBehaviour {
             if(g == -1 || nodeTotalG < g)
             {
                 //if it has no distance left and it is not the end, exclude
-                if(nodeTotalG != 0 || nodeTotalG != distance || node == aStarController.startPosition)
+                if(node.distanceSoFar != 0 || node == aStarController.startPosition)
                 {
                     nextNode = node;
-                    g = nextNode.distanceSoFar;
+                    g = nodeTotalG;
                 }
             }
         }
